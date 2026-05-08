@@ -4,9 +4,9 @@
 
 ## Overview
 
-AI-Driven CVS & Posture Monitor adalah sistem berbasis Computer Vision dan Deep Learning yang dirancang untuk membantu mendeteksi risiko **Computer Vision Syndrome (CVS)** secara real-time menggunakan webcam standar.
+AI-Driven CVS & Posture Monitor merupakan sistem berbasis Computer Vision yang dirancang untuk membantu mendeteksi risiko **Computer Vision Syndrome (CVS)** secara real-time menggunakan webcam standar.
 
-Sistem memanfaatkan model pretrained dari MediaPipe untuk melakukan analisis visual terhadap perilaku pengguna komputer, meliputi:
+Sistem memanfaatkan model pretrained dari MediaPipe untuk melakukan analisis visual terhadap perilaku pengguna komputer melalui pendekatan landmark-based monitoring, meliputi:
 
 * Deteksi laju kedipan mata (*blink rate*)
 * Estimasi jarak wajah ke layar monitor
@@ -53,7 +53,7 @@ Sistem memberikan peringatan visual secara real-time ketika terdeteksi:
 
 Menggunakan metode **Eye Aspect Ratio (EAR)** untuk mendeteksi aktivitas kedipan mata berdasarkan landmark wajah.
 
-Sistem memberikan peringatan apabila pengguna terlalu lama tidak berkedip yang dapat memicu mata kering (*dry eye*).
+Sistem memberikan peringatan apabila pengguna terlalu lama tidak berkedip yang dapat memicu gejala *dry eye syndrome*.
 
 ---
 
@@ -69,7 +69,7 @@ Sistem akan menampilkan peringatan apabila jarak pengguna terlalu dekat dengan l
 
 Memantau keseimbangan posisi bahu menggunakan pose landmark dari MediaPipe Pose.
 
-Sistem mendeteksi indikasi postur miring yang berpotensi menyebabkan ketegangan otot leher dan bahu.
+Sistem mendeteksi indikasi postur miring yang berpotensi menyebabkan ketegangan otot leher dan bahu akibat penggunaan komputer dalam durasi panjang.
 
 ---
 
@@ -87,15 +87,15 @@ Contoh peringatan:
 
 # AI & Deep Learning Components
 
-Project ini memanfaatkan model Deep Learning pretrained dari MediaPipe, antara lain:
+Project ini memanfaatkan model Deep Learning pretrained dari MediaPipe untuk melakukan inferensi landmark wajah dan tubuh secara real-time.
+
+Komponen yang digunakan meliputi:
 
 * BlazeFace
 * Face Mesh
 * BlazePose
 
-Model digunakan untuk melakukan inferensi landmark wajah dan tubuh secara real-time tanpa memerlukan proses training tambahan.
-
-Landmark yang dihasilkan kemudian dianalisis menggunakan pendekatan rule-based untuk mendeteksi perilaku pengguna.
+Landmark yang dihasilkan kemudian diproses menggunakan pendekatan rule-based behavioral analysis untuk mendeteksi indikasi Computer Vision Syndrome (CVS) dan gangguan ergonomis pengguna komputer.
 
 ---
 
@@ -227,21 +227,25 @@ cvs-detection/
 
 # Future Improvements
 
-* Audio alert
-* Logging & analytics dashboard
-* Web-based monitoring
+* Integrasi audio alert
+* Logging data dan dashboard monitoring
 * Adaptive threshold personalization
-* CNN/LSTM-based fatigue prediction
+* Multi-user monitoring system
+* Integrasi model fatigue prediction berbasis CNN/LSTM
 
 ---
 
 # Research References
 
-* MediaPipe Face Mesh
-* MediaPipe Pose
-* Eye Aspect Ratio (EAR)
-* Computer Vision Syndrome (CVS)
-* Ergonomic Monitoring
+1. Dewansyah, F., Asfian, P., & Yunawati, I. (2025). Faktor yang Berhubungan dengan Computer Vision Syndrome (CVS) pada Pekerja Pengguna Komputer. *Jurnal Kesehatan dan Keselamatan Kerja Universitas Halu Oleo*, 6(2), 151–161.
+
+2. Sugeng, S., & Nizar, T. N. (2023). Deteksi Aktivitas Mata, Mulut dan Kemiringan Kepala sebagai Fitur untuk Deteksi Kantuk Pada Pengendara Mobil. *Komputika: Jurnal Sistem Komputer*, 12(1), 83–91.
+
+3. Suradi, A. A. M., Manguma, T. T. F., Alam, S., & Afifah, A. N. N. (2025). Deteksi dan Peringatan Jarak Wajah Otomatis Menggunakan MediaPipe dan Computer Vision untuk Kesehatan Pengguna Komputer. *JUKI: Jurnal Komputer dan Informatika*, 7(2), 127–135.
+
+4. Zheng, Q., Wang, L., Wen, H., Ren, Y., Huang, S., Bai, F., Li, N., Craig, J. P., Tong, L., & Chen, W. (2022). Impact of incomplete blinking analyzed using a deep learning model with the Keratograph 5M in dry eye disease. *Translational Vision Science & Technology*, 11(3), 38.
+
+5. Hidayat, M. A. N., Iriyanti, A. S., Hakim, J., Ndala, S., & Sasono, D. S. (2026). Perbandingan Efektivitas Arsitektur CNN Pada Sistem Klasifikasi Kelelahan Pada Wajah Pengemudi. *RIGGS: Journal of Artificial Intelligence and Digital Business*, 4(4), 15319–15326.
 
 ---
 
